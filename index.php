@@ -1,21 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
 <?php
 
 require 'form.php';
+require 'bootstrapForm.php';
 require 'personnage.php';
 require 'archer.php';
 require 'text.php';
 
-$merlin = new Personnage('Merlin');
-$harry = new Personnage('Harry');
-$legolas = new Archer('Legolas');
-
-$legolas->attaque($harry);
-
-var_dump($merlin, $harry, $legolas);
-
-/*
-$form = new Form($_POST);
-var_dump(Text::withZero(12));
+$form = new BootstrapForm($_POST);
 
 ?>
 
@@ -26,4 +28,7 @@ var_dump(Text::withZero(12));
 	echo $form->submit();
 	?>
 </form>
-*/
+
+</body>
+
+</html>
