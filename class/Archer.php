@@ -1,5 +1,7 @@
 <?php
 
+namespace POO;
+
 class Archer extends Personnage
 {
 	public function __construct($nom)

@@ -1,5 +1,7 @@
 <?php
 
+namespace POO\HTML;
+
 class BootstrapForm extends Form
 {
 	/**

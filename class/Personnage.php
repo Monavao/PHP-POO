@@ -1,5 +1,7 @@
 <?php
 
+namespace POO;
+
 class Personnage
 {
 	const MAX_VIE = 150;

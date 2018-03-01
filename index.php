@@ -1,3 +1,12 @@
+<?php
+
+use POO\HTML\BootstrapForm;
+use POO\Autoloader;
+use POO\Personnage;
+use POO\Archer;
+
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -15,6 +24,13 @@ require 'class/Autoloader.php';
 Autoloader::registerShort();
 
 $form = new BootstrapForm($_POST);
+
+$merlin = new Personnage('Merlin');
+$harry = new Personnage('Harry');
+
+$legolas = new Archer('Legolas');
+
+var_dump($merlin, $harry, $legolas);
 
 ?>
 

@@ -1,8 +1,9 @@
 <?php
 
+namespace POO;
+
 class Autoloader
 {
-
 	/* Utiliser au choix register() + autoload() ou sinon registerShort() */
 
 	/*
@@ -11,17 +12,28 @@ class Autoloader
 		spl_autoload_register(array(__CLASS__, 'autoload'));
 	}
 
-	static function autoload($class_name)
+	static function autoload($class)
 	{
-		require 'class/' . $class_name . '.php';
+		if(strpos($class, __NAMESPACE__ . '\\') === 0)
+		{
+			$class = str_replace(__NAMESPACE__ . '\\', '', $class);
+			$class = str_replace('\\', '/', $class);
+
+			require 'class/' . $class . '.php';
+		}
 	}
 	*/
-
+	
 	static function registerShort()
 	{
-		spl_autoload_register(function($class_name)
+		spl_autoload_register(function($class)
 		{
-			include 'class/' . $class_name . '.php';
+			if(strpos($class, __NAMESPACE__ . '\\') === 0)
+			{
+				$class = str_replace(__NAMESPACE__ . '\\', '', $class);
+				$class = str_replace('\\', '/', $class);
+				include 'class/' . $class . '.php';
+			}
 		});
 	}
 }
