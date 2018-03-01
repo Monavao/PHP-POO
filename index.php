@@ -11,11 +11,8 @@
 
 <?php
 
-require 'form.php';
-require 'bootstrapForm.php';
-require 'personnage.php';
-require 'archer.php';
-require 'text.php';
+require 'class/Autoloader.php';
+Autoloader::registerShort();
 
 $form = new BootstrapForm($_POST);
 
