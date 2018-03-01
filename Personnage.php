@@ -2,6 +2,8 @@
 
 class Personnage
 {
+	const MAX_VIE = 150;
+
 	private $vie = 50;
 	private $atk = 20;
 	private $nom;
@@ -45,7 +47,7 @@ class Personnage
 	{
 		if(is_null($points))
 		{
-			return $this->vie = 100;
+			return $this->vie = self::MAX_VIE;
 		}
 		else
 		{
